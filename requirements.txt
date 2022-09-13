@@ -1,4 +1,4 @@
-openvino-dev[onnx,tensorflow2]==2022.1.0
+openvino-dev[onnx,tensorflow2,pytorch]==2022.1.0
 gdown
 pytube>=12.1.0
 yaspin
@@ -11,12 +11,13 @@ ipywidgets
 # Upgrade onnx version to avoid 220 YOLOV5 pytorch to onnx model export issue on Windows
 onnx>=1.11.0,<1.12.0
 
-torch==1.8.1; sys_platform == 'darwin'
-torchvision==0.9.1; sys_platform == 'darwin'
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.8.1+cpu; sys_platform =='linux' or platform_system == 'Windows'
-torchvision==0.9.1+cpu; sys_platform =='linux' or platform_system == 'Windows'
-torchmetrics==0.6.2
+# pip install torch==1.8.1+cu101 torchvision==0.9.1+cu101 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+# torch==1.8.1; sys_platform == 'darwin'
+# torchvision==0.9.1; sys_platform == 'darwin'
+# --find-links https://download.pytorch.org/whl/torch_stable.html
+# torch==1.8.1+cpu; sys_platform =='linux' or platform_system == 'Windows'
+# torchvision==0.9.1+cpu; sys_platform =='linux' or platform_system == 'Windows'
+# torchmetrics==0.6.2
 
 # PaddlePaddle notebook requirements
 # For 103 PaddlePaddle MO conversion tutorial and 206 PaddleGAN/AnimeGAN demo
@@ -31,7 +32,7 @@ transformers
 
 # NNCF notebook requirements
 nncf[tf,torch]==2.3.0
-tensorflow==2.5.3
+tensorflow==2.5.3 # 2.3.0
 tensorflow_datasets==4.2.0
 
 # CT scan training/inference requirements
